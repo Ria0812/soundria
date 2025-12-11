@@ -1,0 +1,28 @@
+name: Simple Practice Workflow
+
+on: 
+  push:
+
+jobs:
+
+  # -------------------
+  # 1️⃣ First Job
+  # -------------------
+  job_one:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Step 1 - Print message
+        run: echo "Hello from Job One!"
+
+
+  # -------------------
+  # 2️⃣ Second Job (runs after first)
+  # -------------------
+  job_two:
+    runs-on: ubuntu-latest
+    needs: job_one   # waits for job_one to finish
+
+    steps:
+      - name: Step 1 - Print message
+        run: echo "Hello from Job Two!"
