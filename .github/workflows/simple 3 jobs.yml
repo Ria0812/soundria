@@ -2,6 +2,7 @@ name: Simple 3 Job Workflow
 
 on:
   push:
+    branches: [main]
 
 jobs:
 
